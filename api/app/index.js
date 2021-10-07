@@ -15,6 +15,11 @@ app.get('/pets', (req, res) => {
     res.send(pets)
 })
 
+app.get('/pet/:id', (req, res) => {
+    let pet = pets[req.params.id - 1]
+    res.send(pet)
+})
+
 app.listen(port, () => {
     console.log(`Listening on localhost:${port}`)
 })

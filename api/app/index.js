@@ -2,9 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3001
 let pets = [
-    {name: "Peppers",age: 10,type: "Dog",color: "White/Black"},
-    {name: "Shaggy",age: 12,type: "Cat",color: "White"},
-
+    {name: "Peppers", age: 10, type: "Dog", color: "White/Black"},
+    {name: "Shaggy", age: 12, type: "Cat", color: "White"},
+    {name: "Tasha", age: 14, type: "Dog", color: "Grey"}
 ]
 
 app.get('/', (req, res) => {
@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/pets', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.send(pets)
 })
 
